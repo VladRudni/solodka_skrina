@@ -1,0 +1,186 @@
+// ======================================================================================
+// main section
+.button {
+  // ============
+  background-color: var(--orange);
+  border: none;
+  border-radius: 8px;
+  padding: 20px 40px;
+
+  // font settings
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 152%;
+
+  // other
+  cursor: pointer;
+}
+
+.main {
+  height: 107vh;
+  width: 100vw;
+  background-image: url(../img/background/bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  // flex
+  display: flex;
+  align-items: center;
+
+  // text body
+  .text-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 650px;
+  }
+
+  &__subtitle {
+    background-color: var(--white);
+    color: var(--black);
+    padding: 10px 18px;
+    border-radius: 5px;
+
+    // text
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 1.1px;
+    text-transform: uppercase;
+    font-size: 11px;
+  }
+  &__title {
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 60px;
+    letter-spacing: -1px;
+    @include media(400px) {
+      font-size: 32px;
+    }
+  }
+  &__description {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 143%;
+    @include media(400px) {
+      font-size: 20px;
+    }
+  }
+}
+
+.text-container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  @include media($md2) {
+    flex-direction: column-reverse;
+  }
+
+  button {
+    background-color: var(--orange);
+    border: none;
+    padding: 30px 50px;
+    border-radius: 8px;
+    cursor: pointer;
+
+    // text
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 152%;
+    @include media(400px) {
+      padding: 20px;
+    }
+  }
+  &__button {
+    @include media($md2) {
+      width: 100%;
+    }
+  }
+
+  p {
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+  }
+}
+
+// goods catalog section
+
+.goods {
+  // .goods__row
+
+  color: var(--black);
+
+  &__row {
+    // display
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+  }
+
+  // .goods__title
+
+  &__title {
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 60px; /* 125% */
+    letter-spacing: -1px;
+    text-align: center;
+
+    @include media(400px) {
+      font-size: 28px;
+    }
+  }
+
+  // .goods__grid
+
+  &__grid {
+    // display
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    @include grid_colums(1000px, 700px);
+  }
+
+  // .goods__item
+
+  &__item {
+    // item
+    border-radius: 10px;
+    box-shadow: 2px 8px 16px 0px rgba(194, 198, 208, 0.25);
+    width: 100%;
+
+    // components
+    &__img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px 10px 0 0;
+    }
+    &__title {
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 143%;
+    }
+    &__description {
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%;
+    }
+    &__price {
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 150%;
+    }
+    &__text {
+      padding: 50px 44px;
+    }
+  }
+}

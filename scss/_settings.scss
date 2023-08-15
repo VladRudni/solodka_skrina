@@ -1,0 +1,65 @@
+// vars
+$max-width-maket: 1920;
+$max-width-container: 1180;
+$text-color: var(--white);
+
+// screens
+$md1: $max-width-container + 12 + px;
+$md2: 991.98 + px;
+$md3: 767.98 + px; //phone
+$md4: 479.98 + px;
+$md5: 319.98 + px; // very small phone
+
+// other
+$font-size: 16px; // standart font-size
+
+// settings
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  padding: 0;
+}
+html {
+  overflow-x: hidden;
+}
+body {
+  margin: 0;
+  background-color: var(--white);
+  font-family: "Montserrat", sans-serif;
+  font-size: $font-size;
+  color: $text-color;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: var(--black);
+}
+ul,
+ol {
+  padding: 0;
+  list-style: none;
+}
+
+.container {
+  width: $max-width-container + px;
+  margin: 0 auto;
+  @media (max-width: $md1) {
+    width: 970px;
+  }
+  @media (max-width: $md2) {
+    width: 750px;
+  }
+  @media (max-width: $md3) {
+    width: 100%;
+    padding: 0 15px;
+  }
+}

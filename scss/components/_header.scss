@@ -1,0 +1,89 @@
+header {
+  position: absolute;
+  width: 100%;
+  color: var(--white);
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    h1 {
+      font-size: 21px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 143%;
+    }
+  }
+
+  .contacts {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    &__container {
+      display: flex;
+    }
+    .locate {
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+
+      svg {
+        font-size: 10px;
+      }
+    }
+
+    .phone {
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 152%;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+
+      svg {
+        font-size: 10px;
+      }
+    }
+  }
+}
+
+// Burger menu
+// ==============================
+
+@include media($md3) {
+  @include burger(var(--white));
+  header {
+    position: fixed;
+    background-color: var(--black);
+  }
+  .contacts__container {
+    z-index: -1;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    padding-top: 10vh;
+    opacity: 90%;
+    padding-right: 10px;
+
+    height: 100vh;
+    background-color: var(--black);
+    transition: var(--tr-1);
+
+    .locate,
+    .phone {
+      opacity: 100%;
+    }
+    &.active {
+      right: 0;
+    }
+  }
+}

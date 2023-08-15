@@ -1,0 +1,24 @@
+// imports
+@import "./mixin/burger";
+
+// custom
+@mixin media($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+}
+@mixin media-min($width) {
+  @media (min-width: $width) {
+    @content;
+  }
+}
+
+// Grid colums
+@mixin grid_colums($first, $second) {
+  @media (max-width: $first) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: $second) {
+    grid-template-columns: 100%;
+  }
+}

@@ -1,0 +1,56 @@
+@mixin burger($burger_background_color) {
+  // variables
+
+  %tplline {
+    position: absolute;
+    content: "";
+    background-color: $burger_background_color;
+    width: 100%;
+    height: 2px;
+    border-radius: 2px;
+    transition: var(--tr-1);
+  }
+
+  .burger {
+    position: relative;
+    width: 30px;
+    height: 20px;
+
+    // function
+    cursor: pointer;
+
+    // ===========
+    &::after {
+      @extend %tplline;
+    }
+    &::before {
+      @extend %tplline;
+    }
+    &::after {
+      bottom: 0;
+    }
+    &::before {
+      top: 0;
+    }
+
+    span {
+      @extend %tplline;
+      top: 9px;
+    }
+    // active
+    // ===============
+    &.active {
+      &::before {
+        transform: rotate(45deg);
+        top: 9px;
+      }
+      &::after {
+        transform: rotate(-45deg);
+        bottom: 9px;
+      }
+      span {
+        transform: scale(0);
+      }
+    }
+  }
+}
