@@ -1,5 +1,13 @@
 // ======================================================================================
 // main section
+
+// templates
+%subtitle {
+  background-color: var(--white);
+  color: var(--black);
+  padding: 10px 18px;
+  border-radius: 5px;
+}
 .button {
   // ============
   background-color: var(--orange);
@@ -36,11 +44,7 @@
   }
 
   &__subtitle {
-    background-color: var(--white);
-    color: var(--black);
-    padding: 10px 18px;
-    border-radius: 5px;
-
+    @extend %subtitle;
     // text
     font-style: normal;
     font-weight: 400;
@@ -181,6 +185,94 @@
     }
     &__text {
       padding: 50px 44px;
+    }
+  }
+}
+
+// advert  section
+// ==================================
+
+.advert {
+  width: 100vw;
+  height: 120vh;
+
+  // background
+  background-image: url(../img/background/bg-2.png);
+  background-color: var(--blue-dark);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  // flex
+  display: flex;
+  align-items: center;
+
+  // .advert__row
+  &__row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 100px;
+    @include grid_colums(930px, 930px);
+    &__img {
+      width: 800px;
+    }
+  }
+
+  // text-body
+  .text-body {
+    color: var(--white);
+    max-width: 481px;
+    // flex
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    @include media($md2) {
+      background-color: rgba(0, 0, 0, 0.25);
+      border-radius: 12px;
+      padding: 20px;
+    }
+    &__container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    &__subtitle {
+      @extend %subtitle;
+
+      // text
+      font-size: 11px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%;
+      letter-spacing: 1.1px;
+      text-transform: uppercase;
+    }
+
+    // .text-body__title
+
+    &__title {
+      // text
+      font-size: 48px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 60px;
+      letter-spacing: -1px;
+    }
+
+    // .text-body__button
+
+    &__button {
+    }
+
+    // .text-body__description
+    &__description {
+      // text
+      font-size: 21px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 143%;
+      letter-spacing: -0.2px;
     }
   }
 }

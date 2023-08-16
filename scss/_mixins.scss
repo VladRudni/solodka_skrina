@@ -2,6 +2,9 @@
 @import "./mixin/burger";
 
 // custom
+// ==================
+
+// media
 @mixin media($width) {
   @media (max-width: $width) {
     @content;
